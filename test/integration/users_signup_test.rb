@@ -10,8 +10,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                          password:              "foo",
                                          password_confirmation: "bar" } }
     end
-    assert_template 'users/new'
-     assert_template 'users/show'
-    assert_not flash.FILL_IN
+    follow_redirect!
+    assert_template 'users/show'
+    assert is_logged_in?
   end
 end
