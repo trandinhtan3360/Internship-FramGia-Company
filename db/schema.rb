@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170619015910) do
+ActiveRecord::Schema.define(version: 20170619041116) do
 
   create_table "bubbles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.datetime "created_at", null: false
@@ -114,6 +114,8 @@ ActiveRecord::Schema.define(version: 20170619015910) do
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
   add_foreign_key "categori_product", "categori", column: "id_categories", primary_key: "id_categories", name: "categori_product_ibfk_2"
