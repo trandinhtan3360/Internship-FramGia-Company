@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   match '/help',    to: 'static_pages#help',    via: 'get'
   post 'users/create'
   resources :users 
+  resources :account_activations, only: [:edit]
 end
