@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admins/new'
+  get 'admins/edit'
   get 'password_resets/new'
   get 'password_resets/edit'
   get    '/login',   to: 'sessions#new'
