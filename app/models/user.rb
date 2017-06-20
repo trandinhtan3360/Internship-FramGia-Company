@@ -30,9 +30,9 @@ class User < ApplicationRecord
   end
 
   def remember
-    self.remember_token = User.new_token
-    update_attribute(:remember_digest, User.digest(remember_token))
-  end  
+    remember_token = new_token
+    update_attribute(:remember_digest, digest(remember_token))
+  end
 
   def authenticated?(attribute, token)
   digest = self.send("#{attribute}_digest")
